@@ -1,0 +1,61 @@
+
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+}
+
+body {
+    background: url("https://www.itl.cat/pngfile/big/298-2986758_website-background.png") no-repeat center center fixed;
+    /* background: url("../templates/bg1.jpg"); */
+    background-size: cover;
+}
+
+.form{
+    text-align: center;
+    justify-content: center;
+}
+
+label{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    font-size: medium;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 10%;
+    background-color: #af4c4c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #fa5656;
+  }
+  
+  /* div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  } */
+
+  .flex_{
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+  }

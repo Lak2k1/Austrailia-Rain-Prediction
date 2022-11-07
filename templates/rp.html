@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='styles.css') }}"
+    />
+  </head>
+  <body class="bodyCss">
+  
+    <form action="/pred" method="post" for="form" class="form">
+      <h1>Rain Predictor</h1>
+      <h1 align="center">{{pr}}</h1>
+	  <div class="flex_">
+        <div>
+          <label>Date:</label>
+          <div>
+            <input type="date" />
+          </div>
+        </div>
+        <div>
+          <label>Location:</label>
+          <div>
+            <select>
+              <option selected disabled>Select an option</option>
+              {% for var in range(0,xgb[2]['Location']|length) %}
+              <option value="{{xgb[2]['Location'][var]}}">
+                {{xgb[2]['Location'][var]}}
+              </option>
+              {% endfor %}
+            </select>
+            <br /><br />
+          </div>
+        </div>
+        <div>
+          <label>Minimum Temperature:</label>
+          <div><input type="text" name="MinTemp" /><br /><br /></div>
+        </div>
+      </div>
+      <div class="flex_">
+        <div>
+          <label>Maximum Temperature:</label>
+          <div><input type="text" name="MaxTemp" /><br /><br /></div>
+        </div>
+        <div>
+          <label>Rainfall:</label>
+          <div><input type="text" name="Rainfall" /><br /><br /></div>
+        </div>
+        <div>
+          <label>Evaporation:</label>
+          <div><input type="text" /><br /><br /></div>
+        </div>
+      </div>
+
+      <div class="flex_">
+        <div>
+          <label>Sunshine:</label>
+          <div><input type="text" /><br /><br /></div>
+        </div>
+        <div>
+          <label>Wind Gust Direction:</label>
+          <div>
+            <select name="WindGustDir">
+              <option selected disabled>Select an option</option>
+              {% for var in range(0,xgb[2]['WindGustDir']|length) %}
+              <option value="{{xgb[2]['WindGustDir'][var]}}">
+                {{xgb[2]['WindGustDir'][var]}}
+              </option>
+              {% endfor %}</select
+            ><br /><br />
+          </div>
+        </div>
+        <div>
+          <label>Wind Gust Speed:</label>
+          <div><input type="text" name="WindGustSpeed" /><br /><br /></div>
+        </div>
+      </div>
+      <div class="flex_">
+        <div>
+          <label>Wind Direction at 9AM:</label>
+          <div>
+            <select name="WindDir9am">
+              <option selected disabled>Select an option</option>
+              {% for var in range(0,xgb[2]['WindDir9am']|length) %}
+              <option value="{{xgb[2]['WindDir9am'][var]}}">
+                {{xgb[2]['WindDir9am'][var]}}
+              </option>
+              {% endfor %}</select
+            ><br /><br />
+          </div>
+        </div>
+        <div>
+          <label>Wind Direction at 3PM:</label>
+          <div>
+            <select name="WindDir3pm">
+              <option selected disabled>Select an option</option>
+              {% for var in range(0,xgb[2]['WindDir3pm']|length) %}
+              <option value="{{xgb[2]['WindDir3pm'][var]}}">
+                {{xgb[2]['WindDir3pm'][var]}}
+              </option>
+              {% endfor %}</select
+            ><br /><br />
+          </div>
+        </div>
+        <div>
+          <label>Wind Speed at 9AM:</label>
+          <div><input type="text" name="WindSpeed9am" /><br /><br /></div>
+        </div>
+      </div>
+      <div class="flex_">
+        <div>
+          <label>Wind Speed at 3PM:</label>
+          <div><input type="text" name="WindSpeed3pm" /><br /><br /></div>
+        </div>
+        <div>
+          <label>Humidity at 9AM:</label>
+          <div><input type="text" name="Humidity9am" /><br /><br /></div>
+        </div>
+        <div>
+          <label>Humidity at 3PM:</label>
+          <div><input type="text" name="Humidity3pm" /><br /><br /></div>
+        </div>
+      </div>
+      <div class="flex_">
+        <div>
+          <label>Pressure at 9AM:</label>
+          <div><input type="text" name="Pressure9am" /><br /><br /></div>
+        </div>
+        <div>
+          <label>Pressure at 3PM:</label>
+          <div><input type="text" name="Pressure3pm" /><br /><br /></div>
+        </div>
+        <div>
+          <label>Clouds at 9AM:</label>
+          <div><input type="text" name="Cloud9am" /><br /><br /></div>
+        </div>
+      </div>
+
+      <div class="flex_">
+        <div>
+          <label>Clouds at 3PM:</label>
+          <div><input type="text" name="Cloud3pm" /><br /><br /></div>
+        </div>
+        <div>
+          <label>Temperature at 9AM:</label>
+          <div><input type="text" name="Temp9am" /><br /><br /></div>
+        </div>
+        <div>
+          <label>Temperature at 3PM:</label>
+          <div><input type="text" name="Temp3pm" /><br /><br /></div>
+        </div>
+        <div>
+          <label>Did it Rain that day?:</label>
+
+          <div>
+            <select name="RainToday">
+              <option selected disabled>Select an option</option>
+              <option value="0">0</option>
+              <option value="1">1</option></select
+            ><br /><br />
+          </div>
+        </div>
+      </div>
+
+      <input type="submit" />
+    </form>
+    
+  </body>
+</html>
